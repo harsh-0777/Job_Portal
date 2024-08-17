@@ -3,9 +3,10 @@ import cookieParser from "cookie-parser";
 import cors from "cors";
 const app = express();
 
+import dbConnect from "./db/dbConnect.js";
+
 //configuring enviorment files
 import dotenv from "dotenv";
-import dbConnect from "./db/dbConnect.js";
 dotenv.config({ path: "./config/config.env" });
 
 //middlewares
