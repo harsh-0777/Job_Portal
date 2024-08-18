@@ -16,7 +16,10 @@ app.use(express.static("public"));
 
 // middleware external
 app.use(cookieParser());
-app.use(cors());
+app.use(cors({ origin: "*" }));
+
+import userRouter from "./routes/user.route.js";
+app.use("/jobPortal/api/v1/user", userRouter);
 
 app.listen(process.env.PORT || 3300, () => {
   dbConnect();
